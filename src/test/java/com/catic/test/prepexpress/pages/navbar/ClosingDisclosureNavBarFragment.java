@@ -2,6 +2,8 @@ package com.catic.test.prepexpress.pages.navbar;
 
 import org.openqa.selenium.By;
 
+import net.serenitybdd.core.pages.PageObject;
+
 public class ClosingDisclosureNavBarFragment {
 	// page 1
 	private static final By MENU_CD_PAGE_1 = By.id("pageOneMenu");
@@ -35,4 +37,97 @@ public class ClosingDisclosureNavBarFragment {
 	// page 5
 	private static final By MENU_CD_PAGE_5 = By.id("pageFiveMenu");
 	private static final By ITEM_LOAN_CALCS_DISCLOSURES = By.linkText("Loan Calculations And Other Disclosures");
+	
+	private NavBarHelper helper;
+	
+	private ClosingDisclosureNavBarFragment(NavBarHelper helper) {
+		this.helper = helper;
+	}
+	
+	// page 1
+	
+	public void loanTerms() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_1, ITEM_LOAN_TERMS);
+	}
+	
+	public void projectedPayments() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_1, ITEM_PROJECTED_PAYMENTS);
+	}
+	
+	public void costsAtClosing() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_1, ITEM_COSTS_AT_CLOSING);
+	}
+	
+	// page 2
+	
+	public void originationCosts() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_2, ITEM_ORIGINATION_COSTS);
+	}
+	
+	public void servicesBorrowerDidNotShopFor() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_2, ITEM_SERVICE_NO_SHOP);
+	}
+	
+	public void servicesBorrowerDidShopFor() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_2, ITEM_SERVCE_DID_SHOP);
+	}
+	
+	public void totalLoanCosts() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_2, ITEM_TOTAL_LOAN_COSTS);
+	}
+	
+	public void taxesAndOtherGovernmentFees() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_2, ITEM_TAXES_AND_OTHER_FEES);
+	}
+	
+	public void prepaids() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_2, ITEM_PREPAIDS);
+	}
+	
+	public void initialEscrowPaymentAtClosing() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_2, ITEM_INITIAL_ESCROW);
+	}
+	
+	public void other() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_2, ITEM_OTHER);
+	}
+	
+	public void totalOtherCosts() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_2, ITEM_TOTAL_OTHER);
+	}
+	
+	public void totalClosingCosts() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_2, ITEM_TOTAL_CLOSING);
+	}
+	
+	// page 3
+	
+	public void calculatingCashToClose() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_3, ITEM_CALC_CASH_TO_CLOSE);
+	}
+	
+	public void summariesOfTransactions() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_3, ITEM_SUMMARIES_OF_TRANS);
+	}
+	
+	public void calculations() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_3, ITEM_CALCULATIONS);
+	}
+	
+	// page 4
+	
+	public void loanDisclosures() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_4, ITEM_LOAN_DISCLOSURES);
+	}
+	
+	// page 5
+	
+	public void loanCalculationsAndOtherDisclosures() {
+		helper.selectDropdownMenuItem(MENU_CD_PAGE_5, ITEM_LOAN_CALCS_DISCLOSURES);
+	}
+	
+	public static ClosingDisclosureNavBarFragment from(PageObject page) {
+		NavBarHelper helper = new NavBarHelper(page);
+		return new ClosingDisclosureNavBarFragment(helper);
+	}
 }

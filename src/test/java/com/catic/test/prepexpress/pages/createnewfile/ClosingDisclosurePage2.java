@@ -1,5 +1,6 @@
 package com.catic.test.prepexpress.pages.createnewfile;
 
+import com.catic.test.prepexpress.pages.navbar.ClosingDisclosureNavBarFragment;
 import com.catic.test.prepexpress.pages.navbar.GenericCreateNewFileNavBarFragment;
 import com.catic.test.prepexpress.pages.navbar.GenericCreateNewFileNavBarFragment.ActionsMenu;
 
@@ -16,5 +17,9 @@ public class ClosingDisclosurePage2 extends PageObject {
 	
 	private GenericCreateNewFileNavBarFragment navigation() {
 		return GenericCreateNewFileNavBarFragment.from(this);
+	}
+	
+	public ClosingDisclosureNavBarFragment pages() {
+		return ClosingDisclosureNavBarFragment.from(this);
 	}
 }
