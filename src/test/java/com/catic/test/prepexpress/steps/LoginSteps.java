@@ -1,6 +1,8 @@
 package com.catic.test.prepexpress.steps;
 
 import org.assertj.core.api.Assertions;
+import org.assertj.core.api.SoftAssertions;
+
 import com.catic.test.prepexpress.pages.LoginPage;
 
 import net.thucydides.core.annotations.Step;
@@ -24,6 +26,8 @@ public class LoginSteps extends ScenarioSteps {
 		Assertions.assertThat(displayedUserName)
 		.as("'Login' username")
 		.isEqualTo(expectedUsername);
+		
+		new SoftAssertions().assertThat(5);
 	}
 	
 	@Step
