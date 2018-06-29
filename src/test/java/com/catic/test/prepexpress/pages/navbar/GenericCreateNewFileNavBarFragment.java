@@ -5,13 +5,13 @@ import org.openqa.selenium.By;
 import com.catic.test.prepexpress.AjaxLoader;
 import com.catic.test.prepexpress.pages.createnewfile.AdjustmentSheetPage;
 import com.catic.test.prepexpress.pages.createnewfile.AltaSettlementStatementPage;
-import com.catic.test.prepexpress.pages.createnewfile.ClosingDisclosurePage2;
 import com.catic.test.prepexpress.pages.createnewfile.DisbursementsPage;
 import com.catic.test.prepexpress.pages.createnewfile.Form1099SPage;
 import com.catic.test.prepexpress.pages.createnewfile.GenInfoPage;
 import com.catic.test.prepexpress.pages.createnewfile.HUDPage;
 import com.catic.test.prepexpress.pages.createnewfile.ManageDocumentsPage;
 import com.catic.test.prepexpress.pages.createnewfile.PolicyOtherDocumentsPage;
+import com.catic.test.prepexpress.pages.createnewfile.closingdisclosure.page2.ClosingDisclosurePage2;
 import com.catic.test.prepexpress.pages.home.HomePage;
 
 import net.serenitybdd.core.pages.PageObject;
