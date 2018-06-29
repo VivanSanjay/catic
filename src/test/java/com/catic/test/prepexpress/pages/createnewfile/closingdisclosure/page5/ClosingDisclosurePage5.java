@@ -22,4 +22,8 @@ public class ClosingDisclosurePage5 extends PageObject {
 	public ClosingDisclosureNavBarFragment pages() {
 		return ClosingDisclosureNavBarFragment.from(this);
 	}
+	
+	public LoanCalculationsAndOtherDisclosuresSection loanCalculationsAndOtherDisclosures() {
+		return this.switchToPage(LoanCalculationsAndOtherDisclosuresSection.class);
+	}
 }
