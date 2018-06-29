@@ -3,6 +3,7 @@ package util;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.webdriver.javascript.JavascriptExecutorFacade;
 
 public final class CaticExpectedConditions {
@@ -34,8 +35,41 @@ public final class CaticExpectedConditions {
 				
 				return currentReadyState.equalsIgnoreCase(readyState.getStateName());
 			}
+			
+			@Override
+			public String toString() {
+				return String.format("page has document.readyState: %s", readyState.getStateName());
+			}
 		};
 	}
 	
-	//public 
+	/**
+	 * An expectation that a given {@link WebElementFacade} contains the given classes
+	 * @param element
+	 * @param classes
+	 * @return true if the element contains all the given classes
+	 */
+	public static ExpectedCondition<Boolean> elementHasClasses(final WebElementFacade element, final String... classes) {
+		return new ExpectedCondition<Boolean>() {
+
+			@Override
+			public Boolean apply(WebDriver input) {
+				boolean hasClasses = true;
+				
+				for (String clazz : classes) {
+					if (!element.hasClass(clazz)) {
+						hasClasses = false;
+						break;
+					}
+				}
+				
+				return hasClasses;
+			}
+			
+			@Override
+			public String toString() {
+				return String.format("element (%s) has class(es): %s", element, "[" + String.join(",", classes) + "]");
+			}
+		};
+	}
 }
