@@ -89,4 +89,6 @@ public class Section1300 extends PageObject {
 	
 	@FindBy(id = "btnOpen1300Continuation")
 	private WebElementFacade add1300ContinuationButton;
+	
+	//TODO: section 1300 table
 }
