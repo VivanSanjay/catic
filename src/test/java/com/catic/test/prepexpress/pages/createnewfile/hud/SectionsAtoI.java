@@ -55,11 +55,37 @@ public class SectionsAtoI extends PageObject {
 	@FindBy(id = "SellerAddress1")
 	private WebElementFacade sellerAddress1Field;
 	
+	@FindBy(id = "SellerAddress2")
+	private WebElementFacade sellerAddress2Field;
+	
+	@FindBy(id = "SellerCityStateZip")
+	private WebElementFacade sellerCityStateZipField;
+	
 	// F - Name and Address of Lender
+	@FindBy(id = "LenderName")
+	private WebElementFacade lenderNameField;
+	
+	@FindBy(id = "LenderAddress1")
+	private WebElementFacade lenderAddress1Field;
+	
+	@FindBy(id = "LenderAddress2")
+	private WebElementFacade lenderAddress2Field;
+	
+	@FindBy(id = "LenderCityState")
+	private WebElementFacade lenderCityStateZipField;
 	
 	// G - Property Location
+	@FindBy(id = "PropertyAddress")
+	private WebElementFacade propertyAddressField;
 	
 	// H - Settlement Agent
+	@FindBy(id = "SettlementAgent")
+	private WebElementFacade settlementAgentField;
 	
 	// I - Settlement Date
+	@FindBy(id = "SettlementDate")
+	private WebElementFacade settlementDateField;
+	
+	@FindBy(id = "DisbursementDate")
+	private WebElementFacade disbursementDateField;
 }
