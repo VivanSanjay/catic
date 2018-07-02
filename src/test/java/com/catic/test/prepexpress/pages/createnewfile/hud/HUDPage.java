@@ -1,4 +1,4 @@
-package com.catic.test.prepexpress.pages.createnewfile;
+package com.catic.test.prepexpress.pages.createnewfile.hud;
 
 import com.catic.test.prepexpress.pages.navbar.GenericCreateNewFileNavBarFragment;
 import com.catic.test.prepexpress.pages.navbar.GenericCreateNewFileNavBarFragment.ActionsMenu;

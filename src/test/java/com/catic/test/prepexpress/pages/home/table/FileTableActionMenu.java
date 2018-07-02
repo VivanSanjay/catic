@@ -5,10 +5,10 @@ import com.catic.test.prepexpress.pages.createnewfile.AltaSettlementStatementPag
 import com.catic.test.prepexpress.pages.createnewfile.DisbursementsPage;
 import com.catic.test.prepexpress.pages.createnewfile.Form1099SPage;
 import com.catic.test.prepexpress.pages.createnewfile.GenInfoPage;
-import com.catic.test.prepexpress.pages.createnewfile.HUDPage;
 import com.catic.test.prepexpress.pages.createnewfile.ManageDocumentsPage;
 import com.catic.test.prepexpress.pages.createnewfile.PolicyOtherDocumentsPage;
 import com.catic.test.prepexpress.pages.createnewfile.closingdisclosure.page2.ClosingDisclosurePage2;
+import com.catic.test.prepexpress.pages.createnewfile.hud.HUDPage;
 import com.catic.test.prepexpress.pages.home.dialogs.CreateNewFileFromFileDialog;
 import com.catic.test.prepexpress.pages.home.dialogs.RenameFileDialog;
 
