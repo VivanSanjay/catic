@@ -1,31 +1,12 @@
 package com.catic.test.prepexpress.pages.createnewfile.closingdisclosure.page2;
 
-import org.openqa.selenium.support.FindBy;
-
 import com.catic.test.prepexpress.pages.navbar.ClosingDisclosureNavBarFragment;
 import com.catic.test.prepexpress.pages.navbar.GenericCreateNewFileNavBarFragment;
 import com.catic.test.prepexpress.pages.navbar.GenericCreateNewFileNavBarFragment.ActionsMenu;
 
 import net.serenitybdd.core.pages.PageObject;
-import net.serenitybdd.core.pages.WebElementFacade;
 
-public class ClosingDisclosurePage2 extends PageObject {
-	// Common - Dropdown for paid by others
-	@FindBy(id = "paidByDropDownContainer")
-	private WebElementFacade paidByOthersDropdownMenuContainer;
-	
-	@FindBy(id = "paidbyUnknown")
-	private WebElementFacade paidByUnknownDropdownItem;
-	
-	@FindBy(id = "paidbyLender")
-	private WebElementFacade paidByLenderDropdownItem;
-	
-	@FindBy(id = "paidbyBroker")
-	private WebElementFacade paidByBrokerDropdownItem;
-	
-	@FindBy(id = "paidbyInvestor")
-	private WebElementFacade paidByInvestorDropdownItem;
-	
+public class ClosingDisclosurePage2 extends PageObject {	
 	public ActionsMenu actions() {
 		return navigation().actions();
 	}

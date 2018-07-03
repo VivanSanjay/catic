@@ -10,28 +10,28 @@ public class SectionETaxesAndOtherGovernmentFees extends PageObject {
 	
 	// fees
 	@FindBy(id = "DeedFees")
-	private WebElementFacade deedFeesField;
+	private WebElementFacade deedFeesInputField;
 	
 	@FindBy(id = "MortgageFees")
-	private WebElementFacade mortgageFeesField;
+	private WebElementFacade mortgageFeesInputField;
 	
 	@FindBy(xpath = "//input[@data-id='ReleaseFees']")
-	private WebElementFacade releaseFeesField;
+	private WebElementFacade releaseFeesInputField;
 	
 	@FindBy(id = "FeesBpAtClosing")
-	private WebElementFacade feesBorrowerPaidAtClosingField;
+	private WebElementFacade feesBorrowerPaidAtClosingInputField;
 	
 	@FindBy(xpath = "//input[@data-id='FeesBpBeforeClosing']")
-	private WebElementFacade feesBorrowerPaidBeforeClosingField;
+	private WebElementFacade feesBorrowerPaidBeforeClosingInputField;
 	
 	@FindBy(xpath = "//input[@data-id='FeesSpAtClosing']")
-	private WebElementFacade feesSellerPaidAtClosingField;
+	private WebElementFacade feesSellerPaidAtClosingInputField;
 	
 	@FindBy(xpath = "//input[@data-id='FeesSpBeforeClosing']")
-	private WebElementFacade feesSellerPaidBeforeClosingField;
+	private WebElementFacade feesSellerPaidBeforeClosingInputField;
 	
 	@FindBy(xpath = "//input[@data-id='FeesPaidByOthers']")
-	private WebElementFacade feesPaidByOthersField;
+	private WebElementFacade feesPaidByOthersInputField;
 	
 	@FindBy(id = "btnFeesPaidByOthersIndicator")
 	private WebElementFacade feesPaidByOthersIndicatorButton;
@@ -41,25 +41,25 @@ public class SectionETaxesAndOtherGovernmentFees extends PageObject {
 	
 	// state transfer taxes
 	@FindBy(xpath = "//input[@data-id='TransTaxAmount']")
-	private WebElementFacade stateTransferTaxesAmountField;
+	private WebElementFacade stateTransferTaxesAmountInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxState']")
-	private WebElementFacade transferTaxStateField;
+	private WebElementFacade transferTaxStateInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxBpAtClosing']")
-	private WebElementFacade stateTransferTaxesBorrowerPaidAtClosingField;
+	private WebElementFacade stateTransferTaxesBorrowerPaidAtClosingInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxBpBeforeClosing']")
-	private WebElementFacade stateTransferTaxesBorrowerPaidBeforeClosingField;
+	private WebElementFacade stateTransferTaxesBorrowerPaidBeforeClosingInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxSpAtClosing']")
-	private WebElementFacade stateTransferTaxesSellerPaidAtClosingField;
+	private WebElementFacade stateTransferTaxesSellerPaidAtClosingInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxSpBeforeClosing']")
-	private WebElementFacade stateTransferTaxesSellerPaidBeforeClosingField;
+	private WebElementFacade stateTransferTaxesSellerPaidBeforeClosingInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxPaidByOthers']")
-	private WebElementFacade stateTransferTaxesPaidByOthersField;
+	private WebElementFacade stateTransferTaxesPaidByOthersInputField;
 	
 	@FindBy(id = "btnTransTaxByOthersIndicator")
 	private WebElementFacade stateTransferTaxesPaidByOthersIndicatorButton;
@@ -69,50 +69,50 @@ public class SectionETaxesAndOtherGovernmentFees extends PageObject {
 	
 	// town transfer taxes
 	@FindBy(xpath = "//input[@data-id='TransTaxTownAmount']")
-	private WebElementFacade townTransferTaxesAmountField;
+	private WebElementFacade townTransferTaxesAmountInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxTown']")
-	private WebElementFacade transferTaxTownField;
+	private WebElementFacade transferTaxTownInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxTownBpAtClosing']")
-	private WebElementFacade townTransferTaxesBorrowerPaidAtClosingField;
+	private WebElementFacade townTransferTaxesBorrowerPaidAtClosingInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxTownBpBeforeClosing']")
-	private WebElementFacade townTransferTaxesBorrowerPaidBeforeClosingField;
+	private WebElementFacade townTransferTaxesBorrowerPaidBeforeClosingInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxTownSpAtClosing']")
-	private WebElementFacade townTransferTaxesSellerPaidAtClosingField;
+	private WebElementFacade townTransferTaxesSellerPaidAtClosingInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxTownSpBeforeClosing']")
-	private WebElementFacade townTransferTaxesSellerPaidBeforeClosingField;
+	private WebElementFacade townTransferTaxesSellerPaidBeforeClosingInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxTownPaidByOthers']")
-	private WebElementFacade townTransferTaxesPaidByOthersField;
+	private WebElementFacade townTransferTaxesPaidByOthersInputField;
 	
 	@FindBy(id = "btnTransTaxTownByOthersIndicator")
 	private WebElementFacade townTransferTaxesPaidByOthersIndicatorButton;
 	
 	// county transfer taxes
 	@FindBy(xpath = "//input[@data-id='TransTaxCountyAmount']")
-	private WebElementFacade countTransferTaxesAmountField;
+	private WebElementFacade countTransferTaxesAmountInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxCounty']")
-	private WebElementFacade transferTaxCountyField;
+	private WebElementFacade transferTaxCountyInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxCountyBpAtClosing']")
-	private WebElementFacade countyTransferTaxesBorrowerPaidAtClosingField;
+	private WebElementFacade countyTransferTaxesBorrowerPaidAtClosingInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxCountyBpBeforeClosing']")
-	private WebElementFacade countyTransferTaxesBorrowerPaidBeforeClosingField;
+	private WebElementFacade countyTransferTaxesBorrowerPaidBeforeClosingInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxCountySpAtClosing']")
-	private WebElementFacade countyTransferTaxesSellerPaidAtClosingField;
+	private WebElementFacade countyTransferTaxesSellerPaidAtClosingInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxCountySpBeforeClosing']")
-	private WebElementFacade countyTransferTaxesSellerPaidBeforeClosingField;
+	private WebElementFacade countyTransferTaxesSellerPaidBeforeClosingInputField;
 	
 	@FindBy(xpath = "//input[@data-id='TransTaxCountyPaidByOthers']")
-	private WebElementFacade countyTransferTaxesPaidByOthersField;
+	private WebElementFacade countyTransferTaxesPaidByOthersInputField;
 	
 	@FindBy(id = "btnTransTaxCountyByOthersIndicator")
 	private WebElementFacade countyTransferTaxesPaidByOthersIndicatorButton;
