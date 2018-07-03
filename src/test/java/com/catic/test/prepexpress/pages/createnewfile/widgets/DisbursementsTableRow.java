@@ -7,5 +7,7 @@ import net.serenitybdd.core.pages.WidgetObject;
 @ImplementedBy(DisbursementsTableRowImpl.class)
 public interface DisbursementsTableRow extends WidgetObject {
 
+	void save();
+
 
 }

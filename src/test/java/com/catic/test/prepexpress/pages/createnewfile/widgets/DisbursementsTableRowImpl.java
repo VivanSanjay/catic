@@ -9,15 +9,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.pagefactory.ElementLocator;
 
+import com.catic.test.prepexpress.AjaxLoader;
+
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.pages.WidgetObjectImpl;
 import util.MoneyUtil;
 
-public class DisbursementsTableRowImpl extends WidgetObjectImpl {
+public class DisbursementsTableRowImpl extends WidgetObjectImpl implements DisbursementsTableRow {
 
 	
 	private static final By CELLS = By.className("dataCol");
+	private static final By SAVE_BTN = By.id("btnDisbursementEditorSave");
 
 	
 	 ////    cashReceipt  ////
@@ -27,13 +30,11 @@ public class DisbursementsTableRowImpl extends WidgetObjectImpl {
 	private WebElementFacade ReceiptFromTextBox;
 	
 	@FindBy(xpath = "//label[contains(text(),'Memo')]/..//input[not(@id)]")
-	private WebElementFacade memoTextBox;
+	private WebElementFacade memoOrDescriptionTextBox;
 	
 	@FindBy(xpath = "//label[text()='Amount :']/..//input[not(@id) and contains(@type,'text' )]")
 	private WebElementFacade AmountTextBox;
-	
-	@FindBy(id = "btnDisbursementEditorSave")
-	private WebElementFacade disbursementSaveBtn;
+
 	
 	@FindBy(id = "btnDisbursementEditorClose")
 	private WebElementFacade disbursementCancelBtn;
@@ -57,11 +58,29 @@ public class DisbursementsTableRowImpl extends WidgetObjectImpl {
 		return this.thenFindAll(CELLS);
 	}
 
-	public void InsertItemCashReceipt(String disbursementTo ,String memo, String Amount ) {
-		ReceiptFromTextBox.type(disbursementTo);
-		memoTextBox.type(memo);
-		AmountTextBox.type(Amount);
-		disbursementSaveBtn.click();
+	public DisbursementsTableRow enterReceiptFrom(String description ) {
+		ReceiptFromTextBox.type(description);
+		return this;
+	}
+	
+	public DisbursementsTableRow enterMemoOrDescription(String description){
+		memoOrDescriptionTextBox.type(description);
+		return this;
+	}
+	
+	public DisbursementsTableRow enterAmount(Money amount) {
+		String amt = MoneyUtil.toString(amount);
+		AmountTextBox.type(amt);
+		return this;
+	}
+	@Override
+	public void save() {
+		this.find(SAVE_BTN).click();
+		AjaxLoader.waitForAjaxLoaderToDisappearOn(getPage());
+	}
+	public DisbursementsTableRow clickSaveBtn() {
+
+		return this;
 	}
 }
 
