@@ -74,31 +74,55 @@ public class SectionJTotalClosingCosts extends PageObject {
 		lenderCreditBorrowerPaidAtClosingInputField.type(MoneyUtil.toString(amount));
 	}
 	
+	/**
+	 * Gets the value in 'Closing Costs Subtotals (D + I)' Borrower Paid At Closing field
+	 * @return the value
+	 */
 	public Money getClosingCostsSubtotalsBorrowerPaidAtClosing() {
 		openSection();
 		return MoneyUtil.fromString(closingCostsBorrowerPaidAtClosingField.getValue());
 	}
 	
+	/**
+	 * Gets the value in 'Closing Costs Subtotals (D + I)' Borrower Paid Before Closing field
+	 * @return the value
+	 */
 	public Money getClosingCostsSubototalsBorrowerPaidBeforeClosing() {
 		openSection();
 		return MoneyUtil.fromString(closingCostsBorrowerPaidBeforeClosingField.getValue());
 	}
 	
+	/**
+	 * Gets the value in 'Closing Costs Subtotals (D + I)' Seller Paid At Closing field
+	 * @return the value
+	 */
 	public Money getClosingCostsSubtotalsSellerPaidAtClosing() {
 		openSection();
 		return MoneyUtil.fromString(closingCostsSellerPaidAtClosingField.getValue());
 	}
 	
+	/**
+	 * Gets the value in 'Closing Costs Subtotals (D + I)' Seller Paid Before Closing field
+	 * @return the value
+	 */
 	public Money getClosingCostsSubtotalsSellerPaidBeforeClosing() {
 		openSection();
 		return MoneyUtil.fromString(closingCostsSellerPaidBeforeClosingField.getValue());
 	}
 	
+	/**
+	 * Gets the value in 'Closing Costs Subtotals (D + I)' Paid By Others field
+	 * @return the value
+	 */
 	public Money getClosingCostsSubtotalsPaidByOthers() {
 		openSection();
 		return MoneyUtil.fromString(totalPaidByOtherClosingCostsField.getValue());
 	}
 	
+	/**
+	 * Gets the value in the 'Total Closing Costs (Borrower-Paid)' field
+	 * @return the value
+	 */
 	public Money getTotalClosingCostsBorrowerPaid() {
 		openSection();
 		return MoneyUtil.fromString(totalClosingCostsField.getValue());
