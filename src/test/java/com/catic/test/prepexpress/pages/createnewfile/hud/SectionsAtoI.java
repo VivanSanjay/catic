@@ -1,6 +1,11 @@
 package com.catic.test.prepexpress.pages.createnewfile.hud;
 
+import java.time.LocalDate;
+
 import org.openqa.selenium.support.FindBy;
+
+import com.catic.test.prepexpress.pages.createnewfile.GenInfoPage;
+import com.catic.test.prepexpress.pages.home.HomePageUtils;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -82,10 +87,125 @@ public class SectionsAtoI extends PageObject {
 	@FindBy(id = "SettlementAgent")
 	private WebElementFacade settlementAgentField;
 	
+	@FindBy(id = "AgentPhoneNumber")
+	private WebElementFacade agentPhoneNumberField;
+	
+	@FindBy(id = "PlaceOfSettlement")
+	private WebElementFacade placeOfSettlementField;
+	
 	// I - Settlement Date
 	@FindBy(id = "SettlementDate")
 	private WebElementFacade settlementDateField;
 	
 	@FindBy(id = "DisbursementDate")
 	private WebElementFacade disbursementDateField;
+	
+	public GenInfoPage editGeneralInformation() {
+		editGeneralInformationButton.click();
+		return switchToPage(GenInfoPage.class);
+	}
+	
+	public boolean typeOfLoanFHA() {
+		return typeOfLoanFHARadioButton.isSelected();
+	}
+	
+	public boolean typeOfLoanRHS() {
+		return typeOfLoanRHSRadioButton.isSelected();
+	}
+	
+	public boolean typeOfLoanConvUnins() {
+		return typeOfLoanConvUninsRadioButton.isSelected();
+	}
+	
+	public boolean typeOfLoanVA() {
+		return typeOfLoanVARadioButton.isSelected();
+	}
+	
+	public boolean typeOfLoanConvIns() {
+		return typeOfLoanConvInsRadioButton.isSelected();
+	}
+	
+	public String getFileNumber() {
+		return fileNumberField.getValue();
+	}
+	
+	public String getLoanNumber() {
+		return loanNumberField.getValue();
+	}
+	
+	public String getMortgageInsuranceCaseNumber() {
+		return mortgageInsuranceCaseNumberField.getValue();
+	}
+	
+	public String getBorrowerNames() {
+		return borrowerNamesField.getValue();
+	}
+	
+	public String getBorrowerAddress1() {
+		return borrowerAddress1Field.getValue();
+	}
+	
+	public String getBorrowerAddress2() {
+		return borrowerAddress2Field.getValue();
+	}
+	
+	public String getBorrowerCityStateZip() {
+		return borrowerCityStateZipField.getValue();
+	}
+	
+	public String getSellerNames() {
+		return sellerNamesField.getValue();
+	}
+	
+	public String getSellerAddress1() {
+		return sellerAddress1Field.getValue();
+	}
+	
+	public String getSellerAddress2() {
+		return sellerAddress2Field.getValue();
+	}
+	
+	public String getSellerCityStateZip() {
+		return sellerCityStateZipField.getValue();
+	}
+	
+	public String getLenderName() {
+		return lenderNameField.getValue();
+	}
+	
+	public String getLenderAddress1() {
+		return lenderAddress1Field.getValue();
+	}
+	
+	public String getLenderAddress2() {
+		return lenderAddress2Field.getValue();
+	}
+	
+	public String getLenderCityStateZip() {
+		return lenderCityStateZipField.getValue();
+	}
+	
+	public String getPropertyLocation() {
+		return propertyAddressField.getValue();
+	}
+	
+	public String getSettlementAgent() {
+		return settlementAgentField.getValue();
+	}
+	
+	public String getAgentPhoneNumber() {
+		return agentPhoneNumberField.getValue();
+	}
+	
+	public String getPlaceOfSettlement() {
+		return placeOfSettlementField.getValue();
+	}
+	
+	public LocalDate getSettlementDate() {
+		return HomePageUtils.parseCreatedBetweenDateString(settlementDateField.getValue());
+	}
+	
+	public LocalDate getDisbursementDate() {
+		return HomePageUtils.parseCreatedBetweenDateString(disbursementDateField.getValue());
+	}
 }
