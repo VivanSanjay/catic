@@ -1,5 +1,6 @@
 package com.catic.test.prepexpress.pages.createnewfile.dialogs;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.pagefactory.ElementLocator;
@@ -14,6 +15,9 @@ public class ConfirmDialogImpl extends WidgetObjectImpl implements ConfirmDialog
 	
 	@FindBy(id = "dialogConfirmCancel")
 	private WebElementFacade cancelButton;
+	
+	@FindBy(id = "btnDisbursementEditorSave")
+	private WebElementFacade saveButton;
 	
 	@FindBy(id = "dialogConfirmMessage")
 	private WebElementFacade messageText;
@@ -40,6 +44,10 @@ public class ConfirmDialogImpl extends WidgetObjectImpl implements ConfirmDialog
 		cancelButton.click();
 	}
 
+	@Override
+	public void save() {
+		saveButton.click();
+	}
 	@Override
 	public String getMessage() {
 		return messageText.getText();

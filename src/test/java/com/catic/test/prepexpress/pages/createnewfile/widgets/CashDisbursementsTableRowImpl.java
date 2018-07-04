@@ -16,18 +16,20 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.pages.WidgetObjectImpl;
 import util.MoneyUtil;
 
-public class DisbursementsTableRowImpl extends WidgetObjectImpl implements DisbursementsTableRow {
+public class CashDisbursementsTableRowImpl extends WidgetObjectImpl implements CashDisbursementsTableRow  {
 
 	
+	public CashDisbursementsTableRowImpl(PageObject page, ElementLocator locator, long timeoutInMilliseconds) {
+		super(page, locator, timeoutInMilliseconds);
+
+	}
 	private static final By CELLS = By.className("dataCol");
 	private static final By SAVE_BTN = By.id("btnDisbursementEditorSave");
+	private static final By CANCEL_BTN = By.id("btnDisbursementEditorClose");
+	
 
-	
-	 ////    cashReceipt  ////
-	
-	
 	@FindBy(id = "paymentFromTo")
-	private WebElementFacade ReceiptFromTextBox;
+	private WebElementFacade DisbursementToTextBox;
 	
 	@FindBy(xpath = "//label[contains(text(),'Memo')]/..//input[not(@id)]")
 	private WebElementFacade memoOrDescriptionTextBox;
@@ -38,18 +40,7 @@ public class DisbursementsTableRowImpl extends WidgetObjectImpl implements Disbu
 	
 	@FindBy(id = "btnDisbursementEditorClose")
 	private WebElementFacade disbursementCancelBtn;
-	
 
-	
-	public DisbursementsTableRowImpl(PageObject page, ElementLocator locator, long timeoutInMilliseconds) {
-		super(page, locator, timeoutInMilliseconds);
-	}
-
-	public DisbursementsTableRowImpl(PageObject page, ElementLocator locator, WebElement webElement,
-			long timeoutInMilliseconds) {
-		super(page, locator, webElement, timeoutInMilliseconds);
-	}
-	
 	private String getCellTextForIndex(int cellIndex) {
 		return getCellsForRow().get(cellIndex).getText();
 	}
@@ -58,17 +49,17 @@ public class DisbursementsTableRowImpl extends WidgetObjectImpl implements Disbu
 		return this.thenFindAll(CELLS);
 	}
 
-	public DisbursementsTableRow enterReceiptFrom(String description ) {
-		ReceiptFromTextBox.type(description);
+	public CashDisbursementsTableRow addCashDisbursement(String description ) {
+		DisbursementToTextBox.type(description);
 		return this;
 	}
 	
-	public DisbursementsTableRow enterMemoOrDescription(String description){
+	public CashDisbursementsTableRow addMemoOrDescription(String description){
 		memoOrDescriptionTextBox.type(description);
 		return this;
 	}
 	
-	public DisbursementsTableRow enterAmount(Money amount) {
+	public CashDisbursementsTableRow addAmount(Money amount) {
 		String amt = MoneyUtil.toString(amount);
 		AmountTextBox.type(amt);
 		return this;
@@ -78,7 +69,16 @@ public class DisbursementsTableRowImpl extends WidgetObjectImpl implements Disbu
 		this.find(SAVE_BTN).click();
 		AjaxLoader.waitForAjaxLoaderToDisappearOn(getPage());
 	}
-	public DisbursementsTableRow clickSaveBtn() {
+	@Override
+	public void cancel() {
+		this.find(CANCEL_BTN).click();
+		AjaxLoader.waitForAjaxLoaderToDisappearOn(getPage());
+	}
+	public CashDisbursementsTableRow  clickSaveBtn() {
+
+		return this;
+	}
+	public CashDisbursementsTableRow  clickCancelBtn() {
 
 		return this;
 	}

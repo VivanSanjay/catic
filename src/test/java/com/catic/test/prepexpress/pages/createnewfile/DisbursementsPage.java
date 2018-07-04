@@ -6,7 +6,7 @@ import org.javamoney.moneta.Money;
 import org.openqa.selenium.support.FindBy;
 
 import com.catic.test.prepexpress.pages.createnewfile.widgets.AltaSettlementTableRow;
-import com.catic.test.prepexpress.pages.createnewfile.widgets.DisbursementsTableRow;
+import com.catic.test.prepexpress.pages.createnewfile.widgets.CashReceiptTableRow ;
 import com.catic.test.prepexpress.pages.navbar.GenericCreateNewFileNavBarFragment;
 import com.catic.test.prepexpress.pages.navbar.GenericCreateNewFileNavBarFragment.ActionsMenu;
 
@@ -18,7 +18,7 @@ public class DisbursementsPage extends PageObject {
 	
 	
 	@FindBy(xpath = "//input[contains(@class,'cashInItemSelected')]")
-	private List<DisbursementsTableRow> disbursementCheckbox;
+	private List<CashReceiptTableRow > disbursementCheckbox;
 	
 	
      ////    cashReceipt  ////
@@ -51,20 +51,10 @@ public class DisbursementsPage extends PageObject {
 	private WebElementFacade totalDisbursementsText;
 
     ////  cash disbursement  //////
-	
-	
-	@FindBy(id="btnInsertCashin")
-	private WebElementFacade btnInsertCashinButton;
-	
-	@FindBy(id="btnDeleteCashoutSelected")
-	private WebElementFacade btnDeleteCashoutSelectedButton;
-	
+
 	@FindBy(id="btnNetFundSelected")
 	private WebElementFacade btnNetFundSelectedButton;
-	
-	@FindBy(id="btnCombineCashoutSelected")
-	private WebElementFacade btnCombineCashoutSelectedButton;
-	
+
 	//add items for cash disbursement
 	@FindBy(id="paymentFromTo")
 	private WebElementFacade paymentFromToText;
@@ -95,18 +85,29 @@ public class DisbursementsPage extends PageObject {
 		return GenericCreateNewFileNavBarFragment.from(this);
 	}
 	
-	private DisbursementsTableRow clickItem(WebElementFacade addItem) {
+	private CashReceiptTableRow  clickItem(WebElementFacade addItem) {
 		addItem.click();
 		return null;
 	}
-	public DisbursementsTableRow clickInsertItem(WebElementFacade cashReceiptsInsertItemButton) {
+	public CashReceiptTableRow clickInsertItemCashReceipt(WebElementFacade cashReceiptsInsertItemButton) {
 		return clickItem(cashReceiptsInsertItemButton);
 	}
-	public DisbursementsTableRow clickDeleteItem(WebElementFacade cashReceiptsDeleteItemsButton) {
+	public CashReceiptTableRow deleteCashReceipts(String... descriptions) {
 		return clickItem(cashReceiptsDeleteItemsButton);
 	}
-	public DisbursementsTableRow click(WebElementFacade cashReceiptsCombineItemsButton) {
+	public CashReceiptTableRow combineItems(String... descriptions) {
 		return clickItem(cashReceiptsCombineItemsButton);
 	}
-
+	public CashReceiptTableRow clickInsertItemCashDisbursement(WebElementFacade cashReceiptsInsertItemButton) {
+		return clickItem(cashDisbursementsInsertItemButton);
+	}
+	public CashReceiptTableRow deleteCashDisbursement(String... descriptions) {
+		return clickItem(cashDisbursementsDeleteItemsButton);
+	}
+	public CashReceiptTableRow  combineCashDisbursements(String... descriptions) {
+		return clickItem(cashDisbursementsCombineItemsButton);
+	}
+	public CashReceiptTableRow netFundItem(String... descriptions) {
+		return clickItem(btnNetFundSelectedButton);
+	}
 }

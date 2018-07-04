@@ -14,9 +14,13 @@ public interface ConfirmDialog extends WidgetObject {
 	 */
 	void ok();
 	
-	/**
-	 * Clicks the Cancel button.
+     /**
+	 * Clicks the SAVE button.
 	 */
+	void save();
+		/**
+		 * Clicks the Cancel button.
+		*/
 	void cancel();
 	
 	/**
@@ -41,4 +45,6 @@ public interface ConfirmDialog extends WidgetObject {
 		ConfirmDialog dialog = new ConfirmDialogImpl(page, null, dialogElement, dialogElement.getImplicitTimeoutInMilliseconds());
 		return dialog;
 	}
+
+
 }
