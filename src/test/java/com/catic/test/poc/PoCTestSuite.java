@@ -11,6 +11,7 @@ import com.catic.test.prepexpress.steps.HomeNavigationSteps;
 import com.catic.test.prepexpress.steps.HomeSteps;
 import com.catic.test.prepexpress.steps.LoginSteps;
 import com.catic.test.prepexpress.steps.ReportsNavigationSteps;
+import com.catic.test.prepexpress.steps.SellerEditorSteps;
 import com.catic.test.prepexpress.steps.ToolsNavigationSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -43,6 +44,10 @@ public class PoCTestSuite {
 	
 	@Steps
 	private AltaSettlementStatementSteps altaSteps;
+	
+	@Steps
+	private SellerEditorSteps sellerEditorSteps;
+
 	
 	@Test
 	public void test() {
@@ -83,4 +88,18 @@ public class PoCTestSuite {
 		
 		homeSteps.logOff();
 	}
+	
+	@Test
+	public void test1() throws Exception {
+		login.loginIntoPrepExpressAs("6853AR", "6853Mar!");
+		
+		homeSteps.createNewFileWithRandomizedName("Alex PoC Test", "", "", DisclosureType.CD);
+		createNewFileNavSteps.goTo1099S();
+		sellerEditorSteps.addSellerEditorSave("abcde", "123", "123 street", "Atlanta", "xyz", "12345", "123", MoneyUtil.fromString("20"), MoneyUtil.fromString("200"));
+		Thread.sleep(2000);
+		
+	    //createNewFileNavSteps.goToHome();
+	   //homeSteps.logOff();
+	}
+
 }
