@@ -8,8 +8,6 @@ import net.serenitybdd.core.pages.WidgetObject;
 @ImplementedBy(AdjustmentSheetTableRowImpl.class)
 public interface AdjustmentSheetTableRow extends WidgetObject {
 
-	String getDescription();
-
 	void waitUntilEditable();
 
 	AdjustmentSheetTableRow enterAmount(Money amount);
@@ -17,6 +15,8 @@ public interface AdjustmentSheetTableRow extends WidgetObject {
 	Money getenterAmount();
 
 	AdjustmentSheetTableRow enterDescription(String description);
+	
+	String getDescription();
 
 	void save();
 	
