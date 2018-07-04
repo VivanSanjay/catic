@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.catic.test.prepexpress.model.DisclosureType;
+import com.catic.test.prepexpress.steps.AdjustmentSheetSteps;
 import com.catic.test.prepexpress.steps.AltaSettlementStatementSteps;
 import com.catic.test.prepexpress.steps.BasicCreateNewFileNavigationSteps;
 import com.catic.test.prepexpress.steps.HomeNavigationSteps;
@@ -44,6 +45,9 @@ public class PoCTestSuite {
 	@Steps
 	private AltaSettlementStatementSteps altaSteps;
 	
+	@Steps
+	private AdjustmentSheetSteps adjustSteps;
+	
 	@Test
 	public void test() {
 		login.loginIntoPrepExpressAs("6852AR", "6852Mar!");
@@ -82,5 +86,31 @@ public class PoCTestSuite {
 		createNewFileNavSteps.goToHome();
 		
 		homeSteps.logOff();
+	}
+	
+	@Test
+	public void testAdjustmentSheet()
+	{
+		login.loginIntoPrepExpressAs("6852AR", "6852Mar!");
+		
+		homeSteps.createNewFileWithRandomizedName("Alex PoC Test", "", "", DisclosureType.CD);
+		createNewFileNavSteps.goToAdjustmentSheet();
+		
+		adjustSteps.addCreditsToSellerAndSave(
+				"Credit to Seller Item 1",
+				MoneyUtil.fromString("10"));
+		
+		adjustSteps.addCreditsToBuyerAndSave(
+				"Credit to Seller Item 1",
+				MoneyUtil.fromString("20"));
+		
+		adjustSteps.addPayOffsAndSave(
+				"Pay Offs item 1",
+				MoneyUtil.fromString("30"));
+		
+		createNewFileNavSteps.goToHome();
+		
+		homeSteps.logOff();
+		
 	}
 }
