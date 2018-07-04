@@ -16,6 +16,9 @@ public class ConfirmDialogImpl extends WidgetObjectImpl implements ConfirmDialog
 	@FindBy(id = "dialogConfirmCancel")
 	private WebElementFacade cancelButton;
 	
+	@FindBy(id = "btnDisbursementEditorClose")
+	private WebElementFacade closeButton;
+	
 	@FindBy(id = "btnDisbursementEditorSave")
 	private WebElementFacade saveButton;
 	
@@ -42,6 +45,11 @@ public class ConfirmDialogImpl extends WidgetObjectImpl implements ConfirmDialog
 	@Override
 	public void cancel() {
 		cancelButton.click();
+	}
+	
+	@Override
+	public void close() {
+		closeButton.click();
 	}
 
 	@Override

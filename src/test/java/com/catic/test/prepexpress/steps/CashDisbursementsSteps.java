@@ -22,7 +22,7 @@ public class CashDisbursementsSteps extends ScenarioSteps{
 	private ConfirmDialog confirmDialog;
 	
 	@Step 
-	public void clickCashREceiptInsertItem(WebElementFacade cashReceiptsInsertItemButton) {
+	public void clickCashDisbursementInsertItem(WebElementFacade cashReceiptsInsertItemButton) {
 		disbursementsPage.clickInsertItemCashReceipt(cashReceiptsInsertItemButton);
 	}
 	@Step 

@@ -22,7 +22,10 @@ public interface ConfirmDialog extends WidgetObject {
 		 * Clicks the Cancel button.
 		*/
 	void cancel();
-	
+	/**
+	 * Clicks the Close button.
+	*/
+	void close();
 	/**
 	 * Returns the message text.
 	 * @return the message text
@@ -45,6 +48,8 @@ public interface ConfirmDialog extends WidgetObject {
 		ConfirmDialog dialog = new ConfirmDialogImpl(page, null, dialogElement, dialogElement.getImplicitTimeoutInMilliseconds());
 		return dialog;
 	}
+
+
 
 
 }
