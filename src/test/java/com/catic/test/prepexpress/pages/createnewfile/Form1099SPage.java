@@ -84,6 +84,7 @@ public class Form1099SPage extends PageObject {
 		deleteSellerEditorIcon.click();
 	}
 	
+	//to close the file 
 	public void closeFile() {
 		navigation().closeFile();
 	}

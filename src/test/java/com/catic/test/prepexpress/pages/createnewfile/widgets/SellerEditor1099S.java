@@ -6,6 +6,8 @@ import net.serenitybdd.core.annotations.ImplementedBy;
 import net.serenitybdd.core.pages.WidgetObject;
 
 @ImplementedBy(SellerEditor1099SImpl.class)
+
+//added on 3rd july
 public interface SellerEditor1099S extends WidgetObject{
 
 	SellerEditor1099S sellerEditorEnterName(String name);

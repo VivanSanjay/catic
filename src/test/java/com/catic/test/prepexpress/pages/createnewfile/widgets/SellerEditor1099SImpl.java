@@ -10,6 +10,8 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.pages.WidgetObjectImpl;
 import util.MoneyUtil;
 
+//added on 3rd july
+
 public class SellerEditor1099SImpl extends WidgetObjectImpl implements SellerEditor1099S{
 	
 	@FindBy(xpath = "//label[contains(.,'Name')]//ancestor::div[@class='control-group']//input")

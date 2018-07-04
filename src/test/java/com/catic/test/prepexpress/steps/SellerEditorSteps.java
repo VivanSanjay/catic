@@ -12,6 +12,7 @@ public class SellerEditorSteps {
 
 	private Form1099SPage form1099SPage;
 
+	
 	@Step
 	public void addSellerEditorSave(String name,String ssn,String address,String city,String state,String zipcode,String marriagecode,Money gross,Money estatetax) 
 	{

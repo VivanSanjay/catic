@@ -98,8 +98,8 @@ public class PoCTestSuite {
 		sellerEditorSteps.addSellerEditorSave("abcde", "123", "123 street", "Atlanta", "xyz", "12345", "123", MoneyUtil.fromString("20"), MoneyUtil.fromString("200"));
 		Thread.sleep(2000);
 		
-	    //createNewFileNavSteps.goToHome();
-	   //homeSteps.logOff();
+	    createNewFileNavSteps.goToHome();
+	    homeSteps.logOff();
 	}
 
 }
